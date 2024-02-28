@@ -3,18 +3,9 @@ import noop from "lodash/noop";
 
 type MenuIds = "first" | "second" | "last";
 type Menu = { id: MenuIds; title: string };
-
-type SelectedMenu = {
-	id: MenuIds;
-};
-
-type MenuSelected = {
-	selectedMenu: SelectedMenu;
-};
-
-type MenuAction = {
-	onSelectedMenu: (menuObj: SelectedMenu) => void;
-};
+type SelectedMenu = { id: MenuIds };
+type MenuSelected = { selectedMenu: SelectedMenu };
+type MenuAction = { onSelectedMenu: (menuObj: SelectedMenu) => void };
 
 const MenuSelectedContext = createContext<MenuSelected>({
 	selectedMenu: { id: "first" },
